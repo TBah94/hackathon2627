@@ -4,8 +4,6 @@ Lien data : https://we.tl/t-2QXmZQ9FY5BHebBP
 
 Lien descriptif data : https://www.kaggle.com/competitions/nfl-big-data-bowl-2027/data
 
-Lien colab: https://colab.research.google.com/drive/1QHNnCZMjQRPRFWEQJ4QEDUevqTFToY84?usp=sharing
-
 
  Détection d'Impacts Cinétiques par Modélisation ARIMA-GARCH (NFL Tracking)
 
@@ -16,20 +14,17 @@ lien du zip (drive) : https://drive.google.com/file/d/1rpc-OfrlM8aDFSPGdjByP35iu
 
 code colab à tester :
 ```
-# 1. Installation de gdown (si ce n'est pas déjà fait)
 !pip install -q gdown
 
 import gdown
 
-# 2. Mettez le lien de partage public de votre gros fichier Google Drive ici
 url = "https://drive.google.com/file/d/1rpc-OfrlM8aDFSPGdjByP35iuQzh3Zgc/view?usp=sharing"
-# 3. Nom du fichier de sortie sur Colab
-output = "game_tracking_2024_2.csv"
+output = "game_tracking_2024_3.zip"
 
-# Téléchargement avec l'option --fuzzy qui contourne l'avertissement de sécurité des gros fichiers de Google
-!gdown --fuzzy "{url}" -O "{output}"
+gdown.download(url, output=output, quiet=False )
 
-print("Téléchargement du fichier de 1 Go terminé avec succès !")
+print("Téléchargement terminé avec succès !")
+
 ```
 
 ---
