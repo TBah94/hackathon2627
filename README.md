@@ -29,6 +29,16 @@ print("Téléchargement terminé avec succès !")
 
 ---
 
+projt-git/
+├── .gitignore
+├── README.md
+├── main.py <-- main global qui servira de gestionnaire
+├── arima.py <-- Chacun fait un main pour sa version : ARIMA, ARCH, GUARCH
+├── arch.py <-- Chacun fait un main pour sa version : ARIMA, ARCH, GUARCH
+├── guarch.py <-- Chacun fait un main pour sa version : ARIMA, ARCH, GUARCH
+└── data/
+    └── dataset.csv   <-- Chacun colle les datasets ICI et pas ailleurs
+
 ## 📋 Prérequis
 
 * **Python 3.9 à 3.12** recommandé.
