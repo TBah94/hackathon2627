@@ -4,6 +4,8 @@ Lien data : https://we.tl/t-2QXmZQ9FY5BHebBP
 
 Lien descriptif data : https://www.kaggle.com/competitions/nfl-big-data-bowl-2027/data
 
+Lien colab: https://colab.research.google.com/drive/1QHNnCZMjQRPRFWEQJ4QEDUevqTFToY84?usp=sharing
+
 
  Détection d'Impacts Cinétiques par Modélisation ARIMA-GARCH (NFL Tracking)
 
