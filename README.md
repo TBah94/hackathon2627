@@ -9,23 +9,7 @@ Lien descriptif data : https://www.kaggle.com/competitions/nfl-big-data-bowl-202
 
 Ce projet analyse les séries temporelles haute fréquence (10 Hz) issues des données de tracking de la NFL. L'objectif est de quantifier l'effort cinétique et de détecter automatiquement les impacts (`first_contact`, `tackle`) grâce à la modélisation conjointe de la moyenne conditionnelle (ARIMA) et de la volatilité résiduelle (GARCH).
 ---
-A tester
-lien du zip (drive) : https://drive.google.com/file/d/1rpc-OfrlM8aDFSPGdjByP35iuQzh3Zgc/view?usp=sharing
-
-code colab à tester :
-```
-!pip install -q gdown
-
-import gdown
-
-url = "https://drive.google.com/file/d/1rpc-OfrlM8aDFSPGdjByP35iuQzh3Zgc/view?usp=sharing"
-output = "game_tracking_2024_3.zip"
-
-gdown.download(url, output=output, quiet=False )
-
-print("Téléchargement terminé avec succès !")
-
-```
+Lien colab (Kevin) : https://colab.research.google.com/drive/1QHNnCZMjQRPRFWEQJ4QEDUevqTFToY84?usp=sharing
 
 ---
 
