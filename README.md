@@ -2,6 +2,8 @@
 
 Lien data : https://we.tl/t-2QXmZQ9FY5BHebBP
 
+Lien descriptif data : https://www.kaggle.com/competitions/nfl-big-data-bowl-2027/data
+
 
  Détection d'Impacts Cinétiques par Modélisation ARIMA-GARCH (NFL Tracking)
 
