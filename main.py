@@ -4,8 +4,10 @@ import matplotlib.pyplot as plt
 from statsmodels.tsa.arima.model import ARIMA
 from arch import arch_model
 
+data_path = "nfl-big-data-bowl-2027/"
+
 # 1. Chargement ciblé des fichiers
-tracking = pd.read_csv("game_tracking_2024.csv")
+tracking = pd.read_csv(data_path + "game_tracking_2025.csv")
 
 # 2. Trouver une action qui contient À LA FOIS 'first_contact' et 'tackle'
 events_by_play = tracking.groupby(['game_id', 'play_id'])['event'].unique()
