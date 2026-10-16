@@ -233,6 +233,7 @@ def plot_nfl_analysis(
     mass_kg: float,
     player_name: str = "",
     player_position: str = "",
+    order: Tuple[int, int] = (1, 1)
 ) -> Figure:
     """
     Génère la figure à 3 volets (Cinématique, Volatilité GARCH, Trajectoire 2D).
@@ -285,7 +286,7 @@ def plot_nfl_analysis(
     ax_garch.set_ylabel(r"$\sigma_t$ décélération (N)")
     ax_garch.set_xlabel("Temps écoulé (secondes)")
     ax_garch.set_title(
-        "Instabilité de la force de choc modélisée par GARCH(1,1)",
+        f"Instabilité de la force de choc modélisée par GARCH({order[0]},{order[1]})",
         fontweight="bold",
     )
     ax_garch.grid(True, linestyle=":", alpha=0.6)
