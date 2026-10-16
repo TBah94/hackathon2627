@@ -2,10 +2,10 @@
 Application Streamlit — Projet 4 : Modélisation des Séries Temporelles
 ======================================================================
 Synthèse exécutive & modélisation sur données réelles NFL :
-- 🏈 Cas NFL : Détection d'impacts & profil biomécanique (Poste, Nom, Poids).
-- 📈 GARCH(1,1) : Protocole académique de simulation (Pr. Abass Sagna).
-- 🔄 ARIMA(p,d,q) : Modélisation de la moyenne & cinématique de course.
-- ⚡ ARCH(q) : Hétéroscédasticité pure & chocs sans mémoire.
+- Cas NFL : Détection d'impacts & profil biomécanique (Poste, Nom, Poids).
+- GARCH(1,1) : Protocole académique de simulation (Pr. Abass Sagna).
+- ARIMA(p,d,q) : Modélisation de la moyenne & cinématique de course.
+- ARCH(q) : Hétéroscédasticité pure & chocs sans mémoire.
 """
 
 import os
@@ -32,7 +32,6 @@ except ImportError:
 # Configuration Streamlit
 st.set_page_config(
     page_title="Hackathon — Séries Temporelles NFL",
-    page_icon="🏈",
     layout="wide",
     initial_sidebar_state="expanded"
 )
@@ -59,7 +58,7 @@ def load_cached_nfl_data():
 # ==============================================================================
 # EN-TÊTE SYNTHÉTIQUE — DASHBOARD EXÉCUTIF
 # ==============================================================================
-st.title("🏈 Modélisation des Séries Temporelles appliquée au Choc Sportif")
+st.title("Modélisation de séries temporelles - les chocs dans la NFL")
 st.markdown(
     """
     **Hackathon 2027 — Projet 4 : Validation des modèles par simulation & application NFL**  
@@ -74,7 +73,7 @@ with st.container():
     with col_a:
         st.info(
             """
-            **🔄 ARIMA($p, d, q$)**  
+            **ARIMA($p, d, q$)**  
             *Composante :* **Moyenne $\\mu_t$**  
             *Signal :* Vitesse $v(t)$ (m/s)  
             *Rôle :* Prédit la trajectoire et l'inertie de course libre.
@@ -83,7 +82,7 @@ with st.container():
     with col_b:
         st.warning(
             """
-            **⚡ ARCH($q$)**  
+            **ARCH($q$)**  
             *Composante :* **Variance $\\sigma_t^2$ directe**  
             *Signal :* Accélération relative $(\\Delta v / \\Delta t)^2$  
             *Rôle :* Détecte l'instant du choc sans mémoire ($\\\\beta = 0$).
@@ -92,7 +91,7 @@ with st.container():
     with col_c:
         st.success(
             """
-            **📈 GARCH($p, q$)**  
+            **GARCH($p, q$)**  
             *Composante :* **Variance avec mémoire**  
             *Signal :* Force de freinage $F_{decel}$ (N)  
             *Rôle :* Mesure l'instabilité et l'énergie absorbée en lutte.
@@ -106,17 +105,17 @@ st.sidebar.title("Navigation")
 mode = st.sidebar.radio(
     "Mode d'analyse :",
     [
-        "🏈 Cas NFL — Chocs & Freinage (GARCH)",
-        "📈 GARCH(1,1) — Simulation (Pr. Sagna)",
-        "🔄 ARIMA(p,d,q) — Tendance & Vitesse",
-        "⚡ ARCH(q) — Volatilité Réactive"
+        "GARCH(1,1) — Simulation théorique",
+        "Cas NFL — Chocs & Freinage (GARCH)",
+        "Cas NFL — Tendance & Vitesse (ARIMA)",
+        "Cas NFL — Volatilité Réactive (ARCH)"
     ]
 )
 
 # ==============================================================================
 # 1. CAS NFL : ANALYSE DES CHOCS
 # ==============================================================================
-if mode == "🏈 Cas NFL — Chocs & Freinage (GARCH)":
+if mode == "Cas NFL — Chocs & Freinage (GARCH)":
     st.subheader("Analyse d'Impact Réel : Modèle GARCH(1,1)")
     
     with st.spinner("Chargement des données NFL (Tracking + Combine + Players)..."):
@@ -208,7 +207,7 @@ if mode == "🏈 Cas NFL — Chocs & Freinage (GARCH)":
 # ==============================================================================
 # 2. VALIDATION PAR SIMULATION (ATTENDUS DU SUJET)
 # ==============================================================================
-elif mode == "📈 GARCH(1,1) — Simulation (Pr. Sagna)":
+elif mode == "GARCH(1,1) — Simulation théorique (Pr. Sagna)":
     st.subheader("Protocole Académique de Validation par Simulation")
     
     st.sidebar.subheader("Hyperparamètres")
@@ -277,7 +276,7 @@ elif mode == "📈 GARCH(1,1) — Simulation (Pr. Sagna)":
 # ==============================================================================
 # 3. MODE ARIMA : TENDANCE ET VITESSE
 # ==============================================================================
-elif mode == "🔄 ARIMA(p,d,q) — Tendance & Vitesse":
+elif mode == "Cas NFL — Tendance & Vitesse (ARIMA)":
     st.subheader("Modélisation ARIMA(p, d, q) sur la Vitesse")
     
     if ARIMA_AVAILABLE:
@@ -307,7 +306,7 @@ elif mode == "🔄 ARIMA(p,d,q) — Tendance & Vitesse":
 # ==============================================================================
 # 4. MODE ARCH : VOLATILITÉ RÉACTIVE SANS MÉMOIRE
 # ==============================================================================
-else:
+elif mode == "Cas NFL — Volatilité Réactive (ARCH)":
     st.subheader("Modélisation ARCH(q) : Chocs Ponctuels")
     
     if ARCH_AVAILABLE:
