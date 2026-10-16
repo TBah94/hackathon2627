@@ -402,7 +402,7 @@ def evaluate_simulation(
         "h_pred": h_pred,
         "order": order,
         "true_params": {"ar": ar, "ma": ma, "d": d},
-        "pvalues": res.pvalues.to_dict(),
+        "pvalues": pd.Series(res.pvalues, index=res.param_names).to_dict(),
         "y_full": y_full,
         "y_test": y_test,
         "y_pred": np.asarray(y_pred),
